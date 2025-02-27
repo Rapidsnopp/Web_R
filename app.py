@@ -1,10 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for
+import datetime
 
-app = Flask("My App")
-@app.route("/, methods=['GET', 'POST']")
+app = Flask(__name__)
 
-def welcome():
-    return "<h1>Welcome to the Quizz Game!</h1>"
+@app.route("/", methods=["GET", "POST"])
+def home():
+    return "Hello world test"
 
-if __name__ == "__main__":
-    app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=False , host='0.0.0.0' )

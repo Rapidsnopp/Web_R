@@ -1,33 +1,132 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Chúc mừng sinh nhật</title>
-    <style>
-        body {
-            background-color: red;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-        .scroll-text {
-            position: absolute;
-            width: 100%;
-            top: 50%;
-            transform: translateY(-50%);
-            white-space: nowrap;
-            font-size: 48px;
-            color: white;
-            /* Sử dụng CSS animation để chạy chữ ngang qua màn hình */
-            animation: scroll-left 10s linear infinite;
-        }
-        @keyframes scroll-left {
-            from { transform: translateX(100%) translateY(-50%); }
-            to { transform: translateX(-100%) translateY(-50%); }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Chúc mừng sinh nhật</title>
+  <style>
+    body {
+      background-color: red;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
+    /* Lời chúc chạy ngang qua màn hình */
+    .scroll-text {
+      position: absolute;
+      width: 100%;
+      top: 10px;
+      left: 0;
+      white-space: nowrap;
+      font-size: 48px;
+      color: white;
+      animation: scroll-left 10s linear infinite;
+      z-index: 100;
+    }
+    @keyframes scroll-left {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
+    /* Container chứa các hộp */
+    .boxes-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin-top: 100px; /* Để tránh bị che bởi lời chúc */
+      gap: 20px;
+      padding: 20px;
+    }
+    /* Kiểu cho từng hộp */
+    .box {
+      background-color: white;
+      width: 150px;
+      height: 150px;
+      border: 2px solid #000;
+      border-radius: 10px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Khi mở hộp sẽ phóng to */
+    .box.open {
+      width: 300px;
+      height: 300px;
+    }
+    /* Nội dung bên trong hộp (ẩn ban đầu) */
+    .box-content {
+      display: none;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      overflow: auto;
+      text-align: center;
+      color: black;
+    }
+    /* Hiển thị nội dung khi hộp mở */
+    .box.open .box-content {
+      display: block;
+    }
+  </style>
 </head>
 <body>
-    <div class="scroll-text">Chúc mừng sinh nhật 22 tuổi</div>
+  <!-- Lời chúc chạy -->
+  <div class="scroll-text">Chúc mừng sinh nhật 22 tuổi</div>
+
+  <!-- Các hộp tương tác -->
+  <div class="boxes-container">
+    <div class="box" onclick="toggleBox(this)">
+      <div class="box-label">Hộp 1</div>
+      <div class="box-content">Nội dung hộp 1</div>
+    </div>
+    <div class="box" onclick="toggleBox(this)">
+      <div class="box-label">Hộp 2</div>
+      <div class="box-content">Nội dung hộp 2</div>
+    </div>
+    <div class="box" onclick="toggleBox(this)">
+      <div class="box-label">Hộp 3</div>
+      <div class="box-content">Nội dung hộp 3</div>
+    </div>
+    <div class="box" onclick="toggleBox(this)">
+      <div class="box-label">Hộp 4</div>
+      <div class="box-content">Nội dung hộp 4</div>
+    </div>
+    <div class="box" onclick="toggleBox(this)">
+      <div class="box-label">Hộp 5</div>
+      <div class="box-content">Nội dung hộp 5</div>
+    </div>
+    <div class="box" onclick="toggleBox(this)">
+      <div class="box-label">Hộp 6</div>
+      <div class="box-content">Nội dung hộp 6</div>
+    </div>
+    <div class="box" onclick="toggleBox(this)">
+      <div class="box-label">Hộp 7</div>
+      <div class="box-content">Nội dung hộp 7</div>
+    </div>
+    <div class="box" onclick="toggleBox(this)">
+      <div class="box-label">Hộp 8</div>
+      <div class="box-content">Nội dung hộp 8</div>
+    </div>
+    <div class="box" onclick="toggleBox(this)">
+      <div class="box-label">Hộp 9</div>
+      <div class="box-content">Nội dung hộp 9</div>
+    </div>
+    <div class="box" onclick="toggleBox(this)">
+      <div class="box-label">Hộp 10</div>
+      <div class="box-content">Nội dung hộp 10</div>
+    </div>
+  </div>
+
+  <script>
+    // Hàm chuyển đổi trạng thái mở/đóng của hộp khi click
+    function toggleBox(element) {
+      element.classList.toggle("open");
+    }
+  </script>
 </body>
 </html>

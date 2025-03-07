@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quà Hộp {{ box_id }}</title>
+    <style>
+        body {
+            background-color: #e0ffe0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .gift-box {
+            background-color: #ffeb3b;
+            width: 60%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #000;
+            border-radius: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gift-box">
+        <h1>Chúc mừng! Bạn đã nhận được:</h1>
+        <p>{{ gift }}</p>
+        <button onclick="window.location.href='{{ url_for('index') }}'">Quay về</button>
+    </div>
+</body>
+</html>

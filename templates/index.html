@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            background-image: url("{{ url_for('static', filename='minigame.jpg') }}"), 
-                url("{{ url_for('static', filename='index_background.jpg') }}");
-            background-repeat: no-repeat, no-repeat;
-            background-position: top center, top center; /* canh lên trên, ở giữa theo chiều ngang */
-            background-size: contain, cover;         /* phủ kín màn hình, có thể cắt phần dưới */
             min-height: 100vh;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
             font-family: Arial, sans-serif;
+            background-image: url("{{ url_for('static', filename='minigame.jpg') }}"), 
+                              url("{{ url_for('static', filename='background.jpg') }}");
+            background-repeat: no-repeat, no-repeat;
+            background-position: top center, top center; /* canh lên trên, ở giữa theo chiều ngang */
+            background-size: contain, cover;         /* phủ kín màn hình, có thể cắt phần dưới */
         }
         .scroll-text {
             position: absolute;

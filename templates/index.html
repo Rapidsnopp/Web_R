@@ -10,20 +10,6 @@
       padding: 0;
       min-height: 100vh;
     }
-    .minigame-container {
-      position: fixed;
-      top: 20%; /* Nếu chữ nằm ở trên cùng, có thể chỉnh theo ý */
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      max-width: 600px;  /* Điều chỉnh kích thước tối đa của chữ */
-      height: auto;  /* Ảnh tự động co giãn theo tỷ lệ */
-      background-image: url("{{ url_for('static', filename='minigame.jpg') }}");
-      background-repeat: no-repeat;
-      background-position: top center;
-      background-size: contain;
-      z-index: -1;
-    }
     /* Div nền chung - ảnh rèm */
     .background-container {
       position: fixed;
@@ -37,11 +23,27 @@
       background-size: cover;
       z-index: -2;
     }
+    /* Div hiển thị chữ MINIGAME */
+    .minigame-container {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 600px;
+    height: 150px; /* Đặt chiều cao cụ thể để hiển thị ảnh */
+    background-image: url("{{ url_for('static', filename='minigame.jpg') }}");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: -1;
+}
+
     /* Các nội dung khác hiển thị phía trên các background */
     .boxes-container {
       position: relative;
       z-index: 1;
-      margin-top: 200px; /* Điều chỉnh để không bị che bởi chữ MINIGAME */
+      margin-top: 300px; /* Điều chỉnh để không bị che bởi chữ MINIGAME */
       display: flex;
       flex-wrap: wrap;
       justify-content: center;

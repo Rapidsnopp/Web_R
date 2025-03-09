@@ -25,19 +25,19 @@
     }
     /* Div hiển thị chữ MINIGAME */
     .minigame-container {
-    margin-top: 100px;
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 600px;
-    height: 150px; /* Đặt chiều cao cụ thể để hiển thị ảnh */
-    background-image: url("{{ url_for('static', filename='minigame.jpg') }}");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    z-index: -1;
+        margin-top: 100px;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 500px;
+        height: 150px; /* Đặt chiều cao cụ thể để hiển thị ảnh */
+        background-image: url("{{ url_for('static', filename='minigame.jpg') }}");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        z-index: -1;
 }
 
     /* Các nội dung khác hiển thị phía trên các background */
